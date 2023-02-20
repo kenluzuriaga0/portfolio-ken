@@ -30,25 +30,30 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hola, mi nombre es Ken Luzuriaga"
+					tagline="Software Developer 🇪🇨 "
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Backend</Pill>
 					</div>
+					<header class="section-header stack gap-2 lg:gap-4 ">
+						<p style="text-align: justify;">
+							Soy estudiante de Ingeniería en Sistemas de Información. Soy un entusiasta por la tecnología e inmensa curiosidad intelectual. Tengo experiencia trabajando en equipo y me enfoco en tecnologías de desarrollo backend. 
+							Sin embargo, estoy siempre dispuesto a expandirme a otras areas de TI.
+						</p>
+					</header>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
+					alt="Selfie de Ken"
+					width="350"
+					height="490"
 					src="/assets/portrait.jpg"
 				/>
+				
 			</header>
-
+			
 			<Skills />
 		</div>
 
@@ -119,7 +124,7 @@ const projects = (await getCollection('work'))
 	}
 
 	.hero img {
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 3.7 / 4;
 		object-fit: cover;
 		object-position: top;
 		border-radius: 1.5rem;
