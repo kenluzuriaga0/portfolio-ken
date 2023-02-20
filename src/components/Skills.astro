@@ -5,18 +5,35 @@ import Icon from './Icon.astro';
 <section class="box skills">
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Full Stack</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		<h2>Tech Skills</h2>
+		<p>Tecnologías con las que he trabajado recientemente:</p>
+		<ul>
+			<li>Java - Spring Boot</li>
+			<li>Typescript - Angular</li>
+			<li>SQL</li>
+			<li>Excel - VBA</li>
+		</ul>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Industry Leader</h2>
-		<p>Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.</p>
+		<h2>Soft Skills</h2>
+		<p>Poseo habilidades para la gestion de tiempo y trabajo en equipo </p>
+		<ul>
+			<li>Metodología SCRUM</li>
+			<li>Adaptabilidad</li>
+			<li>Clara Comunicacion</li>
+			<li>Actitud Positiva</li>
+		</ul>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Strategy-Minded</h2>
-		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+		<h2>Aprendiendo</h2>
+		<p>En constante aprendizaje siguiendo el roadmap para ser un SRE (Site Reliability Engineering)</p>
+		<ul>
+			<li>Docker</li>
+			<li>AWS</li>
+			<li>Jenkins</li>
+		</ul>
 	</div>
 </section>
 
@@ -39,7 +56,7 @@ import Icon from './Icon.astro';
 		font-size: var(--text-lg);
 	}
 
-	.skills p {
+	.skills p, ul {
 		color: var(--gray-400);
 	}
 
