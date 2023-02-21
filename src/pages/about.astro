@@ -1,58 +1,146 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+
+// Calcular la edad de Ken
+const fecActual = new Date();
+const fecNac = new Date("2000-08-11 00:00:00");
+let edad = fecActual.getFullYear() - fecNac.getFullYear();
+if (
+	fecActual.getMonth() < fecNac.getMonth() ||
+	(fecActual.getMonth() == fecNac.getMonth() &&
+		fecActual.getDate() < fecNac.getDate())
+) {
+	edad--;
+}
+const fecJobActual = new Date("2022-08-01 00:00:00");
+
+let diffAnios = fecActual.getFullYear() - fecJobActual.getFullYear();
+// Calcular la diferencia en meses y años
+if (
+	fecActual.getMonth() < fecJobActual.getMonth() ||
+	(fecActual.getMonth() == fecJobActual.getMonth() &&
+		fecActual.getDate() < fecJobActual.getDate())
+) {
+	diffAnios--;
+}
+
+let diffAniosShow = diffAnios
+	? diffAnios == 1
+		? diffAnios + " año"
+		: diffAnios + " años"
+	: "";
+
+let diffMesesObj = fecActual.getTime() - fecJobActual.getTime();
+const diffMeses = new Date(diffMesesObj).getMonth();
+let diffMesesShow = diffMeses
+	? diffMeses == 1
+		? diffMeses + " mes"
+		: diffMeses + " meses"
+	: "";
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="About | Ken Luzuriaga" description="About Ken Luzuriaga">
 	<div class="stack gap-20">
-		<main class="wrapper about">
+		<main style="align-items: center;" class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
-				/>
-			</Hero>
-
+				title="Acerca de"
+				tagline="Gracias por pasarte por aquí. Puedes saber más de mi leyendo esto."
+			/>
+			<img
+				title="Ken feliz con su cevichocho"
+				width="300"
+				height="273"
+				src="/assets/at-work.jpg"
+				alt="Ken comiendo un cevichocho"
+			/>
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						Me presento con esta foto comiendo cevichocho en el
+						parque La Carolina de la ciudad de Quito en Ecuador.
 					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
+					<br />
+					<p style="text-align: justify;">
+						Tengo {edad} años. Empecé a trabajar desde que entré a la
+						universidad como asistente de proyectos donde adquirí conocimientos
+						sobre las area de Talento Humano y Compras, debido a que
+						mis proyectos fueron dirigidos hacia esas areas y ademas
+						aprendí sobre hardware debido a estar un gran tiempo en soporte
+						técnico. Posteriormente, di el paso al area de desarrollo
+						donde pude usar el lenguaje de programación Java, creando
+						diferentes tipos de aplicaciones web para programar módulos
+						del ERP propio de la empresa.
 					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+					<p style="text-align: justify;">
+						Actualmente, laboro de manera remota para una empresa de
+						Quito, donde continúo fortaleciendo mis habilidades técnicas
+						, específicamente en Python, y aprendiendo
+						nuevos conceptos de Contabilidad.
 					</p>
 				</div>
 			</section>
+			<hr />
+			<hr />
 			<section>
-				<h2 class="section-title">Education</h2>
+				<h2 class="section-title">Educación</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<p class="edu">Universidad de Guayaquil</p>
+					<small>2019 - 2024</small>
+					<p>Ingeniería en Sistemas de Información</p>
 				</div>
 			</section>
+			<hr />
+			<hr />
 			<section>
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title">Experiencia</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<p class="job">Trescloud</p>
+					<p>Developer Junior</p>
+					<small>Ago/2022 - Actualidad</small>
+					<small>({diffAniosShow} {diffMesesShow})</small>
+					<ul>
+						<li>
+							Personalizaciones para clientes en módulos del ERP
+							Odoo usando Python
+						</li>
+					</ul>
+
+					<br />
+
+					<p class="job">Grupo MediLink.</p>
+					<p>Programador Junior</p>
+					<small>Ene/2021 - Julio/2022</small>
+					<small>(1 año 7 meses)</small>
+					<ul>
+						<li>
+							Desarrollo de aplicaciones Web en javaEE (JSF)
+							Junior
+						</li>
+						<li>
+							Desarrollo de servicios Rest en java (Spring Boot)
+						</li>
+					</ul>
+					<br />
+					<p>Asistente de proyecto</p>
+					<small>Jun/2018 - Dic/2020</small>
+					<small>(2 años 7 meses)</small>
+					<ul>
+						<li>
+							Manejo avanzado de tablas dinámicas y funciones de
+							búsqueda y texto en excel
+						</li>
+						<li>
+							Creacion de macros con VBA para acelerar procesos
+						</li>
+						<li>
+							Help Desk: Formateo de PC, Instalación de software
+							varios y Sistemas operativos
+						</li>
+					</ul>
 				</div>
 			</section>
 		</main>
@@ -116,5 +204,18 @@ import Hero from '../components/Hero.astro';
 			display: contents;
 			font-size: var(--text-lg);
 		}
+	}
+	.job {
+		color: rgb(156, 50, 243);
+		font-weight: bolder;
+		font-size: 1.45rem;
+	}
+	.edu {
+		color: rgb(74, 116, 252);
+		font-weight: bolder;
+		font-size: 1.45rem;
+	}
+	p {
+		text-align: justify;
 	}
 </style>
