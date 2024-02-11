@@ -21,7 +21,7 @@ Sistema con distintos modulos para gestionar los atendidos de las ordenes en lab
 
 #### Tecnologías usadas:
 
-- Frontend: Angular 14
+- Frontend: Angular 17
 - Backend: Java 11 - Spring Boot
 - Base de datos: Postgresql 13
 
